@@ -1,5 +1,12 @@
 # houses some fusion models 
 
+for stepper_with_joints:
+the m5x2x10s mount the phone holder
+the 16s are the set screws
+
+todo - add a way for the coupler to slot into the bottom plate and be aligned with the mounting screws
+
+
 
 https://grabcad.com/library/mg995-servo-3
 https://grabcad.com/library/mg-996r-servo-motor-1

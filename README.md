@@ -4,7 +4,11 @@ for stepper_with_joints:
 the m5x2x10s mount the phone holder
 the 16s are the set screws
 
-todo - add a way for the coupler to slot into the bottom plate and be aligned with the mounting screws
+todo
+  - add a way for the coupler to slot into the bottom plate and be aligned with the mounting screws
+  - create a level shifter with a transistor to give 5v logic to driver from pico 
+  - control pico from android wired to see if its faster 
+  - single cable power. mount pico and driver to bottom plate 
 
 
 

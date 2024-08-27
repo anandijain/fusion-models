@@ -21,8 +21,8 @@ class Motor:
             time.sleep(delay)
 
 # Instantiate two motors
-motor_yaw = Motor(step_pin=17, dir_pin=16)
-motor_pitch = Motor(step_pin=19, dir_pin=18)
+motor_yaw = Motor(step_pin=16, dir_pin=17)
+motor_pitch = Motor(step_pin=18, dir_pin=19)
 
 # Main loop to control the motors
 while True:
@@ -43,3 +43,4 @@ while True:
     motor_pitch.set_direction(clockwise=False)
     motor_pitch.move_steps(200)
     time.sleep(1)
+

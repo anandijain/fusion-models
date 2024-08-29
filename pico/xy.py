@@ -34,7 +34,7 @@ motor_yaw = Motor(step_pin=16, dir_pin=17)
 motor_pitch = Motor(step_pin=18, dir_pin=19)
 
 # Main loop to control the motors concurrently
-steps = 200  # Number of steps for each motor
+steps = 200 * 4  # Number of steps for each motor
 delay = 850  # Delay between steps
 
 while True:

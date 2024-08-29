@@ -13,12 +13,12 @@ class Motor:
         else:
             self.dir_pin.value(0)
     
-    def move_steps(self, steps, delay=0.001):
+    def move_steps(self, steps, delay=850):
         for _ in range(steps):
             self.step_pin.value(1)
-            time.sleep(delay)
+            time.sleep_us(delay)
             self.step_pin.value(0)
-            time.sleep(delay)
+            time.sleep_us(delay)
 
 # Instantiate two motors
 motor_yaw = Motor(step_pin=16, dir_pin=17)

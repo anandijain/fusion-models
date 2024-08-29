@@ -6,7 +6,7 @@ the 16s are the set screws
 
 todo
   - control pico from android wired to see if its faster 
-  - single cable power. mount pico and driver to bottom plate 
+  - mount pico and driver to bottom plate 
   - [ ] the pitch holder should be screwed together with the coupler instead of just awkwardly joined to it
   - use a belt to couple the stepper and pitch holder to save footprint
   - commit to this repo the ISOMetricprofile.xml file with a huge matrix of differently pitched threads 
@@ -14,8 +14,6 @@ todo
   - at some point probably find a power supply to 3A to power both steppers
   - protoboard so wires dont keep falling out
   - custom pcb to see how small i can get things 
-  - add bolt to prevent horizontal movement of the top plate in cad 
-  - fix pitch bearing holder holes to be 1) m5 2) the mirror of the holes for the stepper holder to make it easier to assemble (dont have to put on the holder before screwing in the big yaw gear)
 
 completed
   - create a level shifter with a transistor to give 5v logic to driver from pico 
@@ -23,6 +21,9 @@ completed
   - probably need to redesign shaft collar to use real metal screws as set screws
   - add a way for the coupler to slot into the bottom plate and be aligned with the mounting screws
     - made irrelevant by gears
+  - add bolt to prevent horizontal movement of the top plate in cad 
+  - fix pitch bearing holder holes to be 1) m5 2) the mirror of the holes for the stepper holder to make it easier to assemble (dont have to put on the holder before screwing in the big yaw gear)
+  - single cable power-use a 5v regulator to power the pico from the 19v supply
   
 
 https://grabcad.com/library/mg995-servo-3

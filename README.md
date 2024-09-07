@@ -1,5 +1,29 @@
 # houses some fusion models 
 
+
+wired connection serial phone to Pico 
+bearing redesign 
+rust embassy Pico w 
+protoboard or PCB 
+flywheel motor ball shooter 
+bldc 
+3d printable latching assemblies 
+switch to pose detection, basically max out frame rate and latency. also slim tf down out of the app to just what I need. also maybe look into model quantization - fun ml thing I've never done
+"guitar hero but every time you mess up you get shot" 
+
+9/6/24 todo
+  * design the flywheel and mounting stuff for the dc motors   
+  * get the face tracker working again 
+  * wired connection serial phone to Pico 
+  * model/experimentally determine the compression of the nerf rival round 
+
+done: 
+  * get a motor working (with pwd speed control)
+  * get a kilawatt for the ps 
+    - at full speed current draw is only 1/3 A 
+  * get 4 pin male male headers for plugging in motors 
+  * solder headers onto the pico 
+  * 
 for stepper_with_joints:
 the m5x2x10s mount the phone holder
 the 16s are the set screws
@@ -14,6 +38,7 @@ todo
   - at some point probably find a power supply to 3A to power both steppers
   - protoboard so wires dont keep falling out
   - custom pcb to see how small i can get things 
+  - make delay a query parameer
 
 completed
   - create a level shifter with a transistor to give 5v logic to driver from pico 

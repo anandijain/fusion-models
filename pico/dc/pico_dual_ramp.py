@@ -1,5 +1,5 @@
 from machine import Pin, PWM
-import time 
+import time
 
 class Motor:
     def __init__(self, enable_pin, in1_pin, in2_pin, pwm_freq=1000):
@@ -25,6 +25,30 @@ class Motor:
         duty_cycle = int((speed_percentage / 100) * 65535)  # Convert percentage to duty cycle
         self.enable.duty_u16(duty_cycle)
 
+    def ramp_up(self, target_speed, ramp_time, direction="forward"):
+        """Gradually ramp up the motor speed over ramp_time (in seconds)."""
+        current_speed = 0
+        step_time = 0.1  # Time between each speed increment in seconds
+        speed_step = target_speed / (ramp_time / step_time)
+
+        while current_speed < target_speed:
+            if direction == "forward":
+                self.forward(current_speed)
+            elif direction == "reverse":
+                self.reverse(current_speed)
+
+            current_speed += speed_step
+            if current_speed > target_speed:
+                current_speed = target_speed
+            
+            time.sleep(step_time)
+
+        # Set the final speed after ramp-up
+        if direction == "forward":
+            self.forward(target_speed)
+        elif direction == "reverse":
+            self.reverse(target_speed)
+
     def stop(self):
         """Stop the motor."""
         self.enable.duty_u16(0)
@@ -36,11 +60,11 @@ motor1 = Motor(enable_pin=2, in1_pin=3, in2_pin=4)
 motor2 = Motor(enable_pin=5, in1_pin=6, in2_pin=7)
 
 while True:
-    # Control motor1 and motor2
-    motor1.reverse(70)  # Move motor1 forward at 50% speed
-    motor2.forward(70)  # Move motor2 in reverse at 75% speed
+    # Ramp up both motors to 70% speed over 2 seconds
+    motor1.ramp_up(100, 2, direction="reverse")
+    motor2.ramp_up(100, 2, direction="forward")
 
-    time.sleep(5)       # Run for 5 seconds
-    motor1.stop()       # Stop motor1
-    motor2.stop()       # Stop motor2
-    time.sleep(5)       # Run for 5 seconds
+    time.sleep(5)  # Run at full speed for 5 seconds
+    motor1.stop()  # Stop motor1
+    motor2.stop()  # Stop motor2
+    time.sleep(5)  # Pause for 5 seconds

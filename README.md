@@ -12,8 +12,7 @@ switch to pose detection, basically max out frame rate and latency. also slim tf
 "guitar hero but every time you mess up you get shot" 
 
 9/6/24 todo
-  * design the flywheel and mounting stuff for the dc motors   
-  * get the face tracker working again 
+  * design an adjustable width flywheel projectile shooter
   * wired connection serial phone to Pico 
   * model/experimentally determine the compression of the nerf rival round 
 
@@ -23,6 +22,8 @@ done:
     - at full speed current draw is only 1/3 A 
   * get 4 pin male male headers for plugging in motors 
   * solder headers onto the pico 
+  * design the flywheel and mounting stuff for the dc motors   
+  * get the face tracker working again 
   * 
 for stepper_with_joints:
 the m5x2x10s mount the phone holder

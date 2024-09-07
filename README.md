@@ -39,6 +39,7 @@ todo
   - protoboard so wires dont keep falling out
   - custom pcb to see how small i can get things 
   - make delay a query parameer
+  - redo assembly animation with rest of fasteners 
 
 completed
   - create a level shifter with a transistor to give 5v logic to driver from pico 

@@ -1,7 +1,7 @@
 from machine import Pin, PWM
 import time
 
-class Motor:
+class DCMotor:
     def __init__(self, enable_pin, in1_pin, in2_pin, pwm_freq=1000):
         # Initialize pins
         self.in1 = Pin(in1_pin, Pin.OUT)
@@ -66,18 +66,67 @@ def ramp_up_simultaneously(motors, target_speeds, directions, ramp_time):
         elif directions[i] == "reverse":
             motor.reverse(target_speeds[i])
 
+
+# Motor class to encapsulate motor control logic
+class StepperMotor:
+    def __init__(self, step_pin, dir_pin):
+        self.step_pin = Pin(step_pin, Pin.OUT)
+        self.dir_pin = Pin(dir_pin, Pin.OUT)
+    
+    def set_direction(self, clockwise=True):
+        if clockwise:
+            self.dir_pin.value(1)
+        else:
+            self.dir_pin.value(0)
+    
+    def step(self, delay=850):
+        self.step_pin.value(1)
+        time.sleep_us(delay)
+        self.step_pin.value(0)
+        time.sleep_us(delay)
+
+    def move_steps(self, steps, delay=850):
+        for _ in range(steps):
+            self.step(delay)
+
+# Function to move both motors together
+def move_steps_together(motor1, motor2, steps, delay=850):
+    for _ in range(steps):
+        motor1.step(delay)
+        motor2.step(delay)
+
+
+# en2 15
+# in3 14
+# in4 13
+# en1 12
+# in1 11
+# in2 10
 # Example usage for two motors:
-motor1 = Motor(enable_pin=2, in1_pin=3, in2_pin=4)
-motor2 = Motor(enable_pin=5, in1_pin=6, in2_pin=7)
+motor1 = DCMotor(enable_pin=12, in1_pin=11, in2_pin=10)
+motor2 = DCMotor(enable_pin=15, in1_pin=14, in2_pin=13)
+
+yaw = StepperMotor(step_pin=17, dir_pin=16)
+pitch = StepperMotor(step_pin=19, dir_pin=18)
 
 while True:
     # Ramp up both motors to 100% speed over 2 seconds simultaneously
     motors = [motor1, motor2]
     target_speeds = [100, 100]  # Ramp to 100% speed for both motors
-    directions = ["reverse", "forward"]  # Motor 1 forward, Motor 2 reverse
-    ramp_up_simultaneously(motors, target_speeds, directions, ramp_time=2)
+    directions = ["forward", "reverse"]  # Motor 2 forward, Motor 1 reverse
+    ramp_up_simultaneously(motors, target_speeds, directions, ramp_time=1)
 
     time.sleep(5)  # Run at full speed for 5 seconds
     motor1.stop()  # Stop motor1
     motor2.stop()  # Stop motor2
     time.sleep(5)  # Pause for 5 seconds
+    yaw.set_direction(clockwise=True)
+    pitch.set_direction(clockwise=True)
+    yaw.move_steps(200, delay=1500)
+    pitch.move_steps(200, delay=1500)
+    time.sleep(1)
+    yaw.set_direction(clockwise=False)
+    pitch.set_direction(clockwise=False)
+    yaw.move_steps(200, delay=1500)
+    pitch.move_steps(200, delay=1500)
+    time.sleep(1)

@@ -1,33 +1,15 @@
 # houses some fusion models 
 
+9/7/24 goal 
+* wired serial control of steppers 
+  - failed, need otg cable or somethning, also bought a usb to uart chip
+* get the flywheel at least mounted to the yaw. ideally pitch too 
+   - designed waiting on print
+* making a new android app thats just pose detection and api calls/ serial 
+* encoder with hall sensor
+* microstepping 
+* design the nerf feeder/hopper
 
-wired connection serial phone to Pico 
-bearing redesign 
-rust embassy Pico w 
-protoboard or PCB 
-flywheel motor ball shooter 
-bldc 
-3d printable latching assemblies 
-switch to pose detection, basically max out frame rate and latency. also slim tf down out of the app to just what I need. also maybe look into model quantization - fun ml thing I've never done
-"guitar hero but every time you mess up you get shot" 
-
-9/6/24 todo
-  * design an adjustable width flywheel projectile shooter
-  * wired connection serial phone to Pico 
-  * model/experimentally determine the compression of the nerf rival round 
-
-done: 
-  * get a motor working (with pwd speed control)
-  * get a kilawatt for the ps 
-    - at full speed current draw is only 1/3 A 
-  * get 4 pin male male headers for plugging in motors 
-  * solder headers onto the pico 
-  * design the flywheel and mounting stuff for the dc motors   
-  * get the face tracker working again 
-  * 
-for stepper_with_joints:
-the m5x2x10s mount the phone holder
-the 16s are the set screws
 
 todo
   - control pico from android wired to see if its faster 
@@ -40,8 +22,18 @@ todo
   - protoboard so wires dont keep falling out
   - custom pcb to see how small i can get things 
   - make delay a query parameer
-  - redo assembly animation with rest of fasteners 
-
+  - redo assembly animation with rest of fasteners
+  * bldc - get new motors (good to have and learn how to use) 
+  * 3d printable latching assemblies 
+  * rust embassy Pico w 
+  * switch to pose detection, basically max out frame rate and latency. also slim tf down out of the app to just what I need. also maybe look into model quantization - fun ml thing I've never done
+  * "guitar hero but every time you mess up you get shot" 
+  * bearing redesign
+  * design an adjustable width flywheel projectile shooter for different amounts of compression and sized objects
+  * model/experimentally determine the compression of the nerf rival round
+  * reprint bottom plate with 5mm wall thickness but make the necesary changes 
+  * longer dc motor wires 
+  * add phone mount to front of pitch holder
 completed
   - create a level shifter with a transistor to give 5v logic to driver from pico 
       - resolved by using a motor driver (a4988) that cnan handle 3.3v logic
@@ -51,7 +43,21 @@ completed
   - add bolt to prevent horizontal movement of the top plate in cad 
   - fix pitch bearing holder holes to be 1) m5 2) the mirror of the holes for the stepper holder to make it easier to assemble (dont have to put on the holder before screwing in the big yaw gear)
   - single cable power-use a 5v regulator to power the pico from the 19v supply
-  
+    * get a motor working (with pwd speed control)
+  * get a kilawatt for the ps 
+    - at full speed current draw is only 1/3 A 
+  * get 4 pin male male headers for plugging in motors 
+  * solder headers onto the pico 
+  * design the flywheel and mounting stuff for the dc motors   
+  * get the face tracker working again 
+  * 
+
+
+
+for stepper_with_joints:
+the m5x2x10s mount the phone holder
+the 16s are the set screws
+
 
 https://grabcad.com/library/mg995-servo-3
 https://grabcad.com/library/mg-996r-servo-motor-1

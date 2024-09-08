@@ -29,10 +29,16 @@ class Motor:
         print("Finished moving {} steps".format(steps))
 
 
-m = Motor(step_pin=19, dir_pin=21)
-m2 = Motor(step_pin=22, dir_pin=23)
-
-# m.set_direction(clockwise=True)
-# m.move_steps(1000, delay=850)
-m2.set_direction(clockwise=False)
-m2.move_steps(200, delay=1000)
+yaw = Motor(step_pin=19, dir_pin=21)
+pitch = Motor(step_pin=22, dir_pin=23)
+while True:
+    yaw.set_direction(clockwise=True)
+    yaw.move_steps(200, delay=1500)
+    pitch.set_direction(clockwise=False)
+    pitch.move_steps(200, delay=1500)
+    time.sleep(1)
+    yaw.set_direction(clockwise=False)
+    yaw.move_steps(200, delay=1500)
+    pitch.set_direction(clockwise=True)
+    pitch.move_steps(200, delay=1500)
+    time.sleep(1)

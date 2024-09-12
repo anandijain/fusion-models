@@ -1,5 +1,19 @@
 # houses some fusion models 
 
+9/9/24 
+todo:
+* serial communication android 
+* test tracking latency 
+* add the o connectors to the DC motor model 
+* design a terminal block or latching connector for them 
+* speed curves and microstepping 
+* bldc 
+
+done 
+* clean!!!!! living room entryway table 3d printer desk 
+
+
+
 9/7/24 goal 
 * wired serial control of steppers 
   - failed, need otg cable or somethning, also bought a usb to uart chip
@@ -34,6 +48,11 @@ todo
   * reprint bottom plate with 5mm wall thickness but make the necesary changes 
   * longer dc motor wires 
   * add phone mount to front of pitch holder
+  * edit search_timeline script to select the TimelineObjects to easily find them 
+  * come up with a funny acronym for the project
+  * design a mechanism to clamp in the dc motor power connectors for easy (dis)assembly
+
+
 completed
   - create a level shifter with a transistor to give 5v logic to driver from pico 
       - resolved by using a motor driver (a4988) that cnan handle 3.3v logic
@@ -52,6 +71,12 @@ completed
   * get the face tracker working again 
   * 
 
+
+
+for code/esp/serial_test.py 
+1) run it and if you want ot just use the python repl as the serial then done
+2) close that terminal tab, disable micropico ext. restart exts.
+3) open serial monitor and send whatever 
 
 
 for stepper_with_joints:

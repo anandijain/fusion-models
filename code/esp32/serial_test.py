@@ -6,32 +6,14 @@ import time
 led = Pin(2, Pin.OUT)
 
 # Turn off LED initially
-led.value(1)
-print("hello")
-
-# Function to process serial input
-def handle_input(input_str):
-    input_str = input_str.strip().upper()  # Clean and normalize input
-    print(input_str)
-    if input_str == "ON":
-        led.value(1)  # Turn on LED
-        print("LED is ON")
-    elif input_str == "OFF":
-        led.value(0)  # Turn off LED
-        print("LED is OFF")
-    else:
-        print("Unknown command")
+led.value(0)
 
 # Main loop to read serial input
 while True:
-#     if sys.stdin in select.select([sys.stdin], [], [], 0)[0]:
-#         input_data = sys.stdin.read()  # Read the serial input
-#         handle_input(input_data)  # Process the input
-    data = sys.stdin.readline()
-    print(data)
-    if data == "N":
+    data = sys.stdin.readline().strip()
+    print("ECHO: {}".format(data))
+    if data == "ON":
         led.on()
-    elif data == "F":
+    elif data == "OFF":
         led.off()
-
     time.sleep(0.1)  # Small delay to avoid CPU overuse

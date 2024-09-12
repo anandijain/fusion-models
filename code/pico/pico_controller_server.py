@@ -24,9 +24,6 @@ class Motor:
             time.sleep_us(delay)
             self.step_pin.value(0)
             time.sleep_us(delay)
-            if step % 50 == 0:
-                print("Moved {} steps".format(step))
-        print("Finished moving {} steps".format(steps))
 
 # Instantiate motors for yaw and pitch
 motor_yaw = Motor(step_pin=16, dir_pin=17)

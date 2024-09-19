@@ -1,28 +1,24 @@
 # houses some fusion models 
 
-9/9/24 
+9/13/24 
 todo:
-* serial communication android 
-* test tracking latency 
-* add the o connectors to the DC motor model 
-* design a terminal block or latching connector for them 
-* speed curves and microstepping 
-* bldc 
+  * design the feeder for just one shot (for now) using time of flight and a servo 
+  * hopper design
+  * 2 axis bldc cad 
+  
+  * record video of brushed stall in pitch 
+  * obs teleport 
+  * make a better prompt for kcl and really stress test it 
+  * write some thorough notes on zoo.dev what i like and dont 
+done:
 
-done 
-* clean!!!!! living room entryway table 3d printer desk 
 
+feeder fixes:
+  raiser and pusher - more clearance for fasteners
+  the pusher gets stuck and just jams a ball into the wall
+  the channel lets balls through with no compression (how tf did i mess this up)
+  fix placement of the mounting holes also make there be 4 of them 
 
-
-9/7/24 goal 
-* wired serial control of steppers 
-  - failed, need otg cable or somethning, also bought a usb to uart chip
-* get the flywheel at least mounted to the yaw. ideally pitch too 
-   - designed waiting on print
-* making a new android app thats just pose detection and api calls/ serial 
-* encoder with hall sensor
-* microstepping 
-* design the nerf feeder/hopper
 
 
 todo
@@ -51,6 +47,11 @@ todo
   * edit search_timeline script to select the TimelineObjects to easily find them 
   * come up with a funny acronym for the project
   * design a mechanism to clamp in the dc motor power connectors for easy (dis)assembly
+  * test tracking latency 
+  * add the o connectors to the DC motor model 
+  * design a terminal block or latching connector for them 
+  * speed curves and microstepping 
+  * making a new android app thats just pose detection and api calls/ serial 
 
 
 completed
@@ -69,7 +70,11 @@ completed
   * solder headers onto the pico 
   * design the flywheel and mounting stuff for the dc motors   
   * get the face tracker working again 
-  * 
+  * fix design of bldc flywheel to fit into top plate and print
+  * get as5600 working again while mounted to the flywheel
+    - test if i can sample faster with arduino/cpp (upython gives me about 2600 samples a second with no printing)
+  * mount flywheel to something heavy
+  * fix 3d printer
 
 
 

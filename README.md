@@ -1,16 +1,28 @@
 # houses some fusion models 
+9/21 plan
+
+* drill holes into bottom plate for mounting 
+* mount assembly to wood flatform 
+* print maybe end stream 
+* write the code that does a test where it shoots, rotates 90 degrees left and shoots again goes back right and shoots  
+* 2 axis design? 
+
+done: 
+* model solenoid with fusion sheet metal (30 mins)
+* update model of yaw only to work with solenoid ()
+
 
 9/13/24 
 todo:
-  * design the feeder for just one shot (for now) using time of flight and a servo 
   * hopper design
   * 2 axis bldc cad 
-  
   * record video of brushed stall in pitch 
+
+done:
+  * design the feeder for just one shot (for now) using time of flight and a servo 
   * obs teleport 
   * make a better prompt for kcl and really stress test it 
   * write some thorough notes on zoo.dev what i like and dont 
-done:
 
 
 feeder fixes:

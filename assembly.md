@@ -23,7 +23,7 @@ assembly
 * nuts and bolts to tighten down the solenoid feeder assembly to the top plate 
 - heres where things are bad with the assembly. 
 without threaded inserts. its easiest to now fasten the motor mount to the top plate. 
-5) now screw in the big gear to the top plate  
+5) now screw in the big gear to the top plate (m4x8x6 threaded inserts) 
 but the motor mount is not high enough to get the center bolt in (the bolt that keeps the top and bottom plates axially aligned)
 so you need to put the bolt in from the bottom, then the nuts on top
 

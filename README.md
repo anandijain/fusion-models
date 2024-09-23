@@ -1,11 +1,17 @@
 # houses some fusion models 
 9/21 plan
-
+* GET POINT AND SHOOT WORKING 
+* control solenoid with pico 
 * drill holes into bottom plate for mounting 
 * mount assembly to wood flatform 
 * print maybe end stream 
 * write the code that does a test where it shoots, rotates 90 degrees left and shoots again goes back right and shoots  
 * 2 axis design? 
+* use configurations to make both gears so i only need one model 
+* cable notch hole in bottom plate
+* mounting holes in bottom plate
+done:
+
 
 done: 
 * model solenoid with fusion sheet metal (30 mins)

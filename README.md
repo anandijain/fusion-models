@@ -1,4 +1,29 @@
 # houses some fusion models 
+
+----------
+breadboard/perfboard layout pico pinout
+
+yaw driver:
+dir - 16
+step - 17
+!sleep 10
+!reset 11
+ms3 12
+ms2 13
+ms1 14
+~en 15
+
+pitch driver:
+dir 18
+step 19
+!sleep 20 
+!reset 21
+ms3 22 
+ms2 26
+ms1 27
+~en 28
+
+
 9/21 plan
 * GET POINT AND SHOOT WORKING 
 * control solenoid with pico 

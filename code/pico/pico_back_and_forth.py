@@ -4,8 +4,8 @@ import time
 # Define pin numbers
 # pulPin = Pin(18, Pin.OUT)  # Pulse pin connected to PUL- on DM542T
 # dirPin = Pin(19, Pin.OUT)  # Direction pin connected to DIR- on DM542T
-pulPin = Pin(16, Pin.OUT)  # Pulse pin connected to PUL- on DM542T
-dirPin = Pin(17, Pin.OUT)  # Direction pin connected to DIR- on DM542T
+pulPin = Pin(17, Pin.OUT)  # Pulse pin connected to PUL- on DM542T
+dirPin = Pin(16, Pin.OUT)  # Direction pin connected to DIR- on DM542T
 
 # Define constants
 stepsPerRevolution = 200   # Assuming 1.8 degrees per step (200 steps for 360 degrees)

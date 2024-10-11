@@ -34,24 +34,41 @@ def initialize_driver(dir_pin, sleep_pin, reset_pin, ms1_pin, ms2_pin, ms3_pin, 
 initialize_driver(yaw_dir, yaw_sleep, yaw_reset, yaw_ms1, yaw_ms2, yaw_ms3, yaw_enable)
 initialize_driver(pitch_dir, pitch_sleep, pitch_reset, pitch_ms1, pitch_ms2, pitch_ms3, pitch_enable)
 
-# Test the stepper motors
-def test_stepper(step_pin, steps, delay):
+# Test the stepper motors back and forth
+def test_stepper(step_pin, dir_pin, steps, delay):
+    # Move forward
+    dir_pin.value(0)  # Set direction to forward
+    for _ in range(steps):
+        step_pin.value(1)
+        time.sleep(delay)
+        step_pin.value(0)
+        time.sleep(delay)
+    
+    time.sleep(0.5)  # Small pause before changing direction
+    
+    # Move backward
+    dir_pin.value(1)  # Set direction to backward
     for _ in range(steps):
         step_pin.value(1)
         time.sleep(delay)
         step_pin.value(0)
         time.sleep(delay)
 
+s = Pin(9, Pin.OUT)
 # Test sequence
 try:
     while True:
-        print("Testing yaw motor")
-        test_stepper(yaw_step, 200, 0.01)  # 200 steps for yaw motor
-        time.sleep(1)                      # Pause before the next motor
+        print("Testing yaw motor back and forth")
+        test_stepper(yaw_step, yaw_dir, 200, 0.003)  # 100 steps for yaw motor
+        time.sleep(1)                              # Pause before the next motor
 
-        print("Testing pitch motor")
-        test_stepper(pitch_step, 200, 0.01)  # 200 steps for pitch motor
-        time.sleep(1)                       # Pause before repeating
+        s.value(1)
+        time.sleep(0.1)
+        s.value(0)
+
+        # print("Testing pitch motor back and forth")
+        # test_stepper(pitch_step, pitch_dir, 100, 0.003)  # 100 steps for pitch motor
+        # time.sleep(1)                                 # Pause before repeating
 
 except KeyboardInterrupt:
     print("Test interrupted, disabling motors")

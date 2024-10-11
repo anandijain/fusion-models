@@ -1,5 +1,17 @@
 # houses some fusion models 
 
+todo - 
+* finish and order pcbs  
+* refactor a bunch of code to import a module that defines the steppers, the escs, stores a dict of pico * pinouts
+* estop 
+* fix the interference between the solenoid holder and the flywheels, chamfer 
+* redesign the solenoid holder to have the hopper and the time of flight sensor
+* figure out how to programatically export every combination in a onshape part to a 3d file (export zip of all configurations)
+* see if theres a way to select a bunch of things a queue one big download 
+* just get both motors working againx
+* test tilt 
+* notebooklm 
+
 ----------
 breadboard/perfboard layout pico pinout
 
@@ -22,6 +34,11 @@ ms3 22
 ms2 26
 ms1 27
 ~en 28
+
+solenoid/mosfet gate - 9
+esc2 - 8
+esc1 - 7
+
 
 
 9/21 plan

@@ -4,9 +4,9 @@ import time
 
 
 # Initialize the PWM on GPIO 15
-esc = PWM(Pin(14))
+esc = PWM(Pin(8))
 esc.freq(50)  # 50Hz PWM frequency for the ESC
-esc2 = PWM(Pin(15))
+esc2 = PWM(Pin(7))
 esc2.freq(50)  # 50Hz PWM frequency for the ESC
 sleep(1)
 
@@ -47,8 +47,8 @@ def set_throttle(throttle):
 set_throttle(0)
 sleep(5)
 set_throttle(25)
-sleep(0.5)
-set_throttle(20)
+sleep(1)
+set_throttle(30)
 # set_throttle(50)
 # sleep(2)
 # set_throttle(100)

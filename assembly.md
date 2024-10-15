@@ -35,3 +35,17 @@ fix the bottom plate mounting bracket. the holes dont line up
 done:
 bldc magnet needs at least a small hole in the motor mount 
 botht he bldc<-> motor mount hole spacing and the nema hole spacing seems too tight and too close together 
+
+
+painting frame wood:
+
+all pine 
+all 2x2" 
+3 9ft 
+2 8ft
+6 4ft 
+
+all 2x4s
+2 8ft 
+
+8 ft^2 1/2" plywood

@@ -59,16 +59,16 @@ s = Pin(9, Pin.OUT)
 try:
     while True:
         print("Testing yaw motor back and forth")
-        test_stepper(yaw_step, yaw_dir, 200, 0.003)  # 100 steps for yaw motor
-        time.sleep(1)                              # Pause before the next motor
+        # test_stepper(yaw_step, yaw_dir, 200, 0.003)  # 100 steps for yaw motor
+        # time.sleep(1)                              # Pause before the next motor
 
-        s.value(1)
-        time.sleep(0.1)
-        s.value(0)
+        # s.value(1)
+        # time.sleep(0.1)
+        # s.value(0)
 
-        # print("Testing pitch motor back and forth")
-        # test_stepper(pitch_step, pitch_dir, 100, 0.003)  # 100 steps for pitch motor
-        # time.sleep(1)                                 # Pause before repeating
+        print("Testing pitch motor back and forth")
+        test_stepper(pitch_step, pitch_dir, 10000, 0.01)  # 100 steps for pitch motor
+        time.sleep(1)                                 # Pause before repeating
 
 except KeyboardInterrupt:
     print("Test interrupted, disabling motors")
